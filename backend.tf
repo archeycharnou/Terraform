@@ -1,5 +1,5 @@
 /*
-RUN AFTER RESOURCE CREATION ITSELF, comment out resource creation after
+UNCOMMENT & RUN AFTER RESOURCE CREATION ITSELF
 
 terraform {
   required_version = ">=0.12.13"
