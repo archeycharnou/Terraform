@@ -69,7 +69,7 @@ resource "aws_launch_template" "web_lt" {
     security_groups             = [aws_security_group.ec2_sg.id]
     associate_public_ip_address = true
   }
-
+# 169.254.169.254 is AWS’s internal Instance Metadata Service. It allows an EC2 instance to retrieve information about itself without needing an internet connection.
   user_data = base64encode(<<-EOF
     #!/bin/bash
     yum update -y
