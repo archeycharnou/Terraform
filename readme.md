@@ -1,8 +1,3 @@
-README.md with:
-o Instructions to deploy/destroy
-o DNS endpoint for ALB (for verifying IP response)
-
-
 🎯 Objective
 Provision a secure, highly available AWS environment that includes a: VPC, EC2 instances behind
 a Load Balancer and Auto Scaling Group, a MySQL RDS instance, and S3 bucket for private
