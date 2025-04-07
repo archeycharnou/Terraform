@@ -117,10 +117,10 @@ resource "aws_autoscaling_group" "web_asg" {
   }
 }
 
+
 #####################################
 # EC2 Auto Scaling Group Scale policies to work with Cloudwatch
 #####################################
-
 
 resource "aws_autoscaling_policy" "scale_out" {
   name                   = "scale-out-policy"
