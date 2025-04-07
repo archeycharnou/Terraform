@@ -1,6 +1,6 @@
 
 #####################################
-# IAM ROLE FOR ACCESSING PRIVATE S3
+# RDS
 #####################################
 
 resource "aws_db_subnet_group" "rds_subnetgroup" {
