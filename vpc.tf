@@ -1,3 +1,12 @@
+#####################################
+# Elastic IP
+#####################################
+
+# Allocate Elastic IP for NAT Gateway
+resource "aws_eip" "eip" {
+  domain = "vpc"
+}
+
 
 #####################################
 # VPC
@@ -114,15 +123,5 @@ resource "aws_route_table_association" "private_association" {
   count          = length(var.private_subnet_cidrs)
   subnet_id      = aws_subnet.private[count.index].id
   route_table_id = aws_route_table.private_rt.id
-}
-
-
-#####################################
-# EIP
-#####################################
-
-# Allocate Elastic IP for NAT Gateway
-resource "aws_eip" "eip" {
-  domain = "vpc"
 }
 
