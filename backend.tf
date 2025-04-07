@@ -46,6 +46,16 @@ resource "aws_s3_bucket" "state_bucket" {
   }
 }
 
+# Prevent public access to the bucket
+resource "aws_s3_bucket_public_access_block" "state_bucket_block" {
+  bucket = aws_s3_bucket.state_bucket.id
+
+  block_public_acls   = true
+  block_public_policy = true
+  ignore_public_acls  = true
+  restrict_public_buckets = true
+}
+
 # Build a DynamoDB to use for terraform state locking
 resource "aws_dynamodb_table" "tf_lock_state" {
   name = var.dynamo_db_table_name
