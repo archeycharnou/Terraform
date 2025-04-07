@@ -29,3 +29,7 @@ variable "aws_access" {
 variable "aws_secret" {
   default = "secret"
 }
+
+variable "region" {
+  default = "us-west-2"
+}
