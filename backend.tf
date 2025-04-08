@@ -10,10 +10,10 @@ variable "dynamo_db_table_name" {}
 terraform {
   required_version = ">=0.12.13"
   backend "s3" {
-    bucket         = "tf-state"
+    bucket         = "<name of bucket>"
     key            = "terraform.tfstate"
     region         = "us-west-2"
-    dynamodb_table = "aws-locks"
+    dynamodb_table = "<name of DynamoDB>"
     encrypt        = true
   }
 }
