@@ -1,6 +1,6 @@
 
 #####################################
-# RDS SG
+# RDS Security Group
 #####################################
 
 resource "aws_security_group" "rds_sg" {
@@ -29,7 +29,7 @@ resource "aws_security_group" "rds_sg" {
 
 
 #####################################
-# EC2 SG
+# EC2 Security Group
 #####################################
 
 resource "aws_security_group" "ec2_sg" {
@@ -59,7 +59,7 @@ resource "aws_security_group" "ec2_sg" {
 
 
 #####################################
-# ALB SG
+# ALB Security Group
 #####################################
 
 resource "aws_security_group" "alb_sg" {

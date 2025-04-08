@@ -1,5 +1,5 @@
 /*
-UNCOMMENT & RUN AFTER RESOURCE CREATION ITSELF
+RUN AFTER RESOURCE CREATION ITSELF, comment out resource creation after
 
 terraform {
   required_version = ">=0.12.13"
@@ -55,6 +55,7 @@ resource "aws_s3_bucket_public_access_block" "state_bucket_block" {
   ignore_public_acls  = true
   restrict_public_buckets = true
 }
+
 
 # Build a DynamoDB to use for terraform state locking
 resource "aws_dynamodb_table" "tf_lock_state" {

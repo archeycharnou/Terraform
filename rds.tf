@@ -3,6 +3,7 @@
 # RDS
 #####################################
 
+# RDS Subnet Group
 resource "aws_db_subnet_group" "rds_subnetgroup" {
   name       = "rds-subnet-group"
   subnet_ids = aws_subnet.private[*].id
@@ -12,6 +13,7 @@ resource "aws_db_subnet_group" "rds_subnetgroup" {
   }
 }
 
+# RDS Instance
 resource "aws_db_instance" "db" {
   identifier             = "mydb-instance"
   allocated_storage      = 20
