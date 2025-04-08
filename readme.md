@@ -1,27 +1,3 @@
-README.md with:
-o Instructions to deploy/destroy
-o DNS endpoint for ALB (for verifying IP response)
-
-
-Provision a secure, highly available AWS environment that includes: 
-- VPC 
-    - 2 private subnets
-    - 2 public subnets
-    - IGW
-    - NAT GW
-    - Private & Public Route Table
-    - EIP
-- 2 EC2 instances
-- Application Load Balancer
-- Auto Scaling Group & Lauch Template
-- MySQL RDS instance
-- S3 bucket for private document storage. 
-- Enable monitoring and auditing via CloudWatch and CloudTrail.
-- When the system is accessed via port 80, it should respond with the instance’s public IP address in plain text.
-- I added the remote backend on S3 & DynamoDB for state locking and preventing multiple writes at the same time.
-
-
-
 🎯 Objective
 Provision a secure, highly available AWS environment that includes a: VPC, EC2 instances behind
 a Load Balancer and Auto Scaling Group, a MySQL RDS instance, and S3 bucket for private
@@ -56,6 +32,8 @@ Important commands:
     - Generates an execution plan showing what Terraform will do when you apply the changes
 5. terraform apply
     - applies changes to the master node
-- terraform destroy
+6. terraform destroy
     - destroys all infrastructure created by terraform
     - You can use the -target option to destroy a particular resource and its dependencies
+
+

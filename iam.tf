@@ -59,7 +59,7 @@ resource "aws_iam_role_policy_attachment" "s3_access_attachment" {
 
 
 #####################################
-# EC2 Instance Profile
+# IAM Instance Profile
 #####################################
 
 resource "aws_iam_instance_profile" "s3_access_instance_profile" {

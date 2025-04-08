@@ -22,8 +22,8 @@ resource "aws_db_instance" "db" {
   engine_version         = "8.0"
   instance_class         = "db.t3.micro"
   db_name                = "mydb"
-  username               = "Username"
-  password               = "Password"
+  username               = var.dbuser
+  password               = var.dbpass
   db_subnet_group_name   = aws_db_subnet_group.rds_subnetgroup.name
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
   multi_az               = false

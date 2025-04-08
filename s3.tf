@@ -6,7 +6,7 @@
 resource "aws_s3_bucket" "private_docs_bucket" {
   bucket = "private-docs-bucket"
 
-  force_destroy = true # CAREFUL! Allows bucket deletion even if objects exist
+  force_destroy = false # CAREFUL! Allows bucket deletion even if objects exist
 
   tags = {
     Name = "PrivateDocsBucket"

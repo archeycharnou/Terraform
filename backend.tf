@@ -1,3 +1,7 @@
+# Allows for you to name the bucket and dynamoDB table on creation
+variable "s3_bucket_name" {}
+variable "dynamo_db_table_name" {}
+
 /*
 RUN AFTER RESOURCE CREATION ITSELF, comment out resource creation after
 
@@ -14,7 +18,7 @@ terraform {
 */
 
 ##
-# Module to build the DevOps "seed" configuration
+# Module to Build the DevOps Remote State Configuration
 ##
 
 # Build an S3 bucket to store TF state
@@ -42,7 +46,6 @@ resource "aws_s3_bucket" "state_bucket" {
 
   tags = {
     Terraform = "true"
-    # Key = Value 
   }
 }
 

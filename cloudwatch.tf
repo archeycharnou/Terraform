@@ -1,4 +1,8 @@
-# CloudWatch Alarm for scaling out (when CPU > 70%)
+#####################################
+# CLOUDWATCH CPU ALARMS
+#####################################
+
+# CloudWatch Alarm for Monitoring ASG & Scaling Out (when CPU > 70%)
 resource "aws_cloudwatch_metric_alarm" "scale_out" {
   alarm_name          = "high-cpu-scale-out"
   comparison_operator = "GreaterThanThreshold"
@@ -16,7 +20,7 @@ resource "aws_cloudwatch_metric_alarm" "scale_out" {
   alarm_actions = [aws_autoscaling_policy.scale_out.arn]
 }
 
-# CloudWatch Alarm for scaling in (when CPU < 30%)
+# CloudWatch Alarm for Monitoring ASG & Scaling In (when CPU < 30%)
 resource "aws_cloudwatch_metric_alarm" "scale_in" {
   alarm_name          = "low-cpu-scale-in"
   comparison_operator = "LessThanThreshold"

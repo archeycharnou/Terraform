@@ -1,6 +1,6 @@
 
 #####################################
-# Data Source to read the most recent AWS Linux 2 Image
+# Data Source to fetch the most recent AWS Linux 2 Image from AWS & Use for Launch Template
 #####################################
 
 data "aws_ami" "mostrecent" {
@@ -92,7 +92,7 @@ resource "aws_autoscaling_group" "web_asg" {
 # EC2 Auto Scaling Group Scale policies to work with Cloudwatch
 #####################################
 
-
+# Scale OUT
 resource "aws_autoscaling_policy" "scale_out" {
   name                   = "scale-out-policy"
   scaling_adjustment     = 1
@@ -101,6 +101,7 @@ resource "aws_autoscaling_policy" "scale_out" {
   autoscaling_group_name = aws_autoscaling_group.web_asg.name
 }
 
+# Scale IN
 resource "aws_autoscaling_policy" "scale_in" {
   name                   = "scale-in-policy"
   scaling_adjustment     = -1
