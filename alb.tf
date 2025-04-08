@@ -19,6 +19,7 @@ resource "aws_lb" "alb" {
 
 #####################################
 # Application Load Balancer Target Group
+# Routes requests to individual registered targets
 #####################################
 
 resource "aws_lb_target_group" "tg" {
