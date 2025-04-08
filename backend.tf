@@ -3,7 +3,9 @@ variable "s3_bucket_name" {}
 variable "dynamo_db_table_name" {}
 
 /*
-RUN AFTER RESOURCE CREATION ITSELF, comment out resource creation after
+## UNCOMMENT AFTER INITIAL APPLY
+## run : terraform init -reconfigure AFTER the apply to reconfigure to remote backend
+
 
 terraform {
   required_version = ">=0.12.13"
@@ -24,6 +26,7 @@ terraform {
 # Build an S3 bucket to store TF state
 resource "aws_s3_bucket" "state_bucket" {
   bucket = var.s3_bucket_name
+  force_destroy = false
 
   # Tells AWS to encrypt the S3 bucket at rest by default
   server_side_encryption_configuration {
